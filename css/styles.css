@@ -1,8 +1,36 @@
+@font-face {
+    font-family: "Geo Sans Light";
+    src: url("../fonts/GeosansLight.ttf");
+}
+@font-face{
+    font-family: "Franchise";
+    src: url("../fonts/Franchise-Bold.ttf")
+}
 body{
     background-color: #B8D2B4;
 }
+h1, h2{
+    font-family: "Franchise", Tahomas, sans-serif;
+}
+h1{
+    font-size: 4em;
+}
+h2{
+    font-size: 3em;
+}
+h3{
+    font-size: 2em;
+}
 p{
     float: left;
+    width: 45%;
+    font-family: "Geo Sans Light", Helvetica, sans-serif;
+    font-size: 1.5em;
+}
+li{
+    font-family: "Geo Sans Light";
+    font-size: 1.5em;
+    list-style-type: decimal-leading-zero;
 }
 #hella-wrap{
     margin-top: 30px;
@@ -18,11 +46,10 @@ p{
     height: 100%;
     float: left;
     padding-left: 15px;
+    font-family: "Franchise";
 }
 #selected-foods{
     padding-left: 20px;
     margin-bottom: 30px;
-}
-#food-data_wrapper{
-    padding-top: 300px;
+    clear: both;
 }

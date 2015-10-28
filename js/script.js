@@ -1,4 +1,3 @@
-
 //loadDataTable
 //Parse writeHTMLTable
 //    for htmltable +="" + jdfkjsdf + ""
@@ -11,12 +10,19 @@ var milk = 0;
 var protein = 0;
 var calories = 0;
 
+var date = [];
+var cals = [];
+var carbs = [];
+var pros = [];
+var fats = [];
+
 $(document).ready(function() {
     $('#food-data').DataTable( {
         "ajax": 'data.txt'
     } );
 } );
-
+loadData();
+barGraph();
 var isClicked = false;
 
 $(document).ready(function() {
@@ -38,6 +44,7 @@ function checkClick(){
     milk = milk + Number(nutrients[5]);
     protein = protein + Number(nutrients[6]) + Number(nutrients[7]);
     calories =  calories + Number(nutrients[12]);
+    appendFoods();
     gauges();
   }
 }
@@ -267,3 +274,143 @@ $('#food-data tbody').click(function(event){
   checkClick();                    
 })
 
+
+
+function loadData(){
+    
+   $.ajax({
+    type: "GET",
+    url: "nutrients.xml",
+    dataType: "xml",
+    success: function(data){
+        parseData(data);
+    }
+   });
+}
+
+function parseData(data){
+    
+    console.log(data);
+    var i = 0;
+    $(data).find('year').each(function(){
+        var year = $(this);
+        date[i] = year.attr("Year");
+        cals[i] = parseInt(year.attr("Calories"));
+        carbs[i] = parseInt(year.attr("Carbohydrates"));
+        pros[i] = parseInt(year.attr("Protein"));
+        fats[i] = parseInt(year.attr("Fat"));
+    
+        i = i+1;
+        lineGraph();
+    })
+    console.log(date);
+}
+function lineGraph(){
+    $(function () {
+    $('#line-graph').highcharts({
+        title: {
+            text: 'Nutrient Consumption Per Day',
+            x: -20 //center
+        },
+        subtitle: {
+            text: 'Source: USDA',
+            x: -20
+        },
+        xAxis: {
+            categories: date
+        },
+        yAxis: {
+            title: {
+                text: 'Grams(g)'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#000000'
+            }]
+        },
+        tooltip: {
+            valueSuffix: 'g'
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
+        },
+        series: [{
+            name: 'Fats',
+            data: fats
+        }, {
+            name: 'Carbs',
+            data: carbs
+        }, {
+            name: 'Proteins',
+            data: pros
+        }]
+    });
+});
+}
+
+function barGraph(){
+    $(function () {
+    $('#container').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Adults Who Eat Fruits and Veg. Less than Once Per Day'
+        },
+        subtitle: {
+            text: 'Source: CDC'
+        },
+        xAxis: {
+            categories: [
+                'U.S. National',
+                'Mississippi',
+                'Oklahoma',
+                'Arkansas',
+                'West Virginia',
+                'Louisiana',
+                'Tennessee',
+                'Kentucky'
+            ],
+            crosshair: true
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Percentage of Adults'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y:.1f} %</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: 'Fruts',
+            data: [37.7, 50.8, 50.2, 47.5, 47.2, 46.7, 46.3, 45.9]
+
+        }, {
+            name: 'Vegetables',
+            data: [22.6, 32.3, 26.8, 28.6, 26.2, 32.5, 25.4, 25.2]
+
+        }
+            ]
+    });
+});
+}
+
+function appendFoods(){
+    document.getElementById("selected-foods").innerHTML += "<li>" + nutrients[0] + "</li>";
+}

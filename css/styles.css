@@ -1,0 +1,28 @@
+body{
+    background-color: #B8D2B4;
+}
+p{
+    float: left;
+}
+#hella-wrap{
+    margin-top: 30px;
+    width: 100%;
+}
+#gauges-intro{
+    float: left;
+    clear: left;
+}
+#selected-foods-wrapper{
+    background-color: #f0f0f0;
+    width: 45%;
+    height: 100%;
+    float: left;
+    padding-left: 15px;
+}
+#selected-foods{
+    padding-left: 20px;
+    margin-bottom: 30px;
+}
+#food-data_wrapper{
+    padding-top: 300px;
+}

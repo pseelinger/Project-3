@@ -5,18 +5,40 @@
     <title>HTML version</title>
     
     <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
     
 </head>
 
 <body>
+	
+<h1>Fruits and Vegetables Are Going Out of Style</h1>
 
-<div style="width: 800px; height: 400px; margin: 0 auto">
-	<div id="calories-gauge" style="width: 400px; height: 200px; float: left"></div>
-	<div id="grains-gauge" style="width: 400px; height: 200px; float: left"></div>
-    <div id="veggies-gauge" style="width: 400px; height: 200px; float: left"></div>
-    <div id="fruits-gauge" style="width: 400px; height: 200px; float: left"></div>
-    <div id="milk-gauge" style="width: 400px; height: 200px; float: left"></div>
-	<div id="protein-gauge" style="width: 400px; height: 200px; float: left"></div>
+<p style="float: left; width: 45%;">Many Americans think of eating healthy as hitting the right amount of calories each day and not going over the standard 2,000 calorie diet. However, a healthy diet is
+composed of much more that that. A healthy diet requires that you get enough essential nutrients, many of which are found in fruits and vegetables. However, many Americans
+tend to avoid fruits and vegetables, which can lead to an unbalanced diet and health issues later on.</p>
+
+<div id="container" style="width: 50%; height: 400px; float: right; clear: right; margin-bottom: 50px;"></div>
+<div id="line-graph" style="width: 50%; height: 400px; float: right; clear: both; "></div>
+
+<div id="hella-wrap" style="clear: both;">
+	<h2>Are you getting enough of each food group?</h2>
+	<p id="gauges-into">Click on the items in the table below and watch the gauges fill up. Each gauge maxes out at the daily reccommended amount of each food group as set by
+	the USDA. Put in what you would eat for an entire day. You'll find it's much easier to fill some than others.</p>
+	
+<div style="width: 600px; height: 400px; margin: 0 auto; float: right;">
+	<div id="calories-gauge" style="width: 300px; height: 200px; float: left"></div>
+	<div id="grains-gauge" style="width: 300px; height: 200px; float: left"></div>
+    <div id="veggies-gauge" style="width: 300px; height: 200px; float: left"></div>
+    <div id="fruits-gauge" style="width: 300px; height: 200px; float: left"></div>
+    <div id="milk-gauge" style="width: 300px; height: 200px; float: left"></div>
+	<div id="protein-gauge" style="width: 300px; height: 200px; float: left"></div>
+</div>
+<div id="selected-foods-wrapper">
+	<h2>Foods You've Selected</h2>
+	<div id="selected-foods"><ul></ul></div>
+</div>
+
+
 </div>
 
 <table id="food-data" class="display" cellspacing="0" width="100%">
@@ -66,6 +88,7 @@
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="http://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
 <script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
 <script src="http://code.highcharts.com/highcharts-more.js"></script>
 <script src="http://code.highcharts.com/modules/solid-gauge.js"></script>
 <script src="js/script.js"></script>

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<years>
+
+<year Year="1910" Calories="3400" Carbohydrates="498" Protein="99" Fat="117"></year>
+
+<year Year="1920" Calories="3200" Carbohydrates="460" Protein="91" Fat="115"></year>
+
+<year Year="1930" Calories="3400" Carbohydrates="485" Protein="91" Fat="129"></year>
+
+<year Year="1940" Calories="3300" Carbohydrates="439" Protein="92" Fat="136"></year>
+
+<year Year="1950" Calories="3200" Carbohydrates="416" Protein="94" Fat="139"></year>
+
+<year Year="1960" Calories="3100" Carbohydrates="388" Protein="92" Fat="138"></year>
+
+<year Year="1970" Calories="3300" Carbohydrates="401" Protein="98" Fat="147"></year>
+
+<year Year="1980" Calories="3500" Carbohydrates="408" Protein="111" Fat="162"></year>
+
+<year Year="1990" Calories="3800" Carbohydrates="468" Protein="118" Fat="167"></year>
+
+<year Year="2000" Calories="4200" Carbohydrates="505" Protein="124" Fat="191"></year>
+
+<year Year="2010" Calories="4000" Carbohydrates="474" Protein="120" Fat="190"></year>
+</years>

@@ -16,7 +16,7 @@ h1{
     font-size: 4em;
 }
 h2{
-    font-size: 3em;
+    font-size: 2em;
 }
 h3{
     font-size: 2em;
@@ -38,6 +38,14 @@ li{
 }
 table{
     width: 85%;
+}
+.caption{
+    font-size: 1em;
+}
+.gauge{
+    width: 50%;
+    height: 50%;
+    float: left;
 }
 #container{
     background-color: #B8D2B4;
@@ -65,7 +73,8 @@ table{
 #selected-foods-wrapper{
     height: 100%;
     font-family: "Franchise";
-     background-color: #E0E4E5;
+    background-color: #E0E4E5;
+    margin-top: 50px;
 }
 #selected-foods{
     padding-left: 20px;

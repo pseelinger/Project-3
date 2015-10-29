@@ -306,7 +306,7 @@ function lineGraph(){
     $(function () {
     $('#line-graph').highcharts({
         title: {
-            text: 'Nutrient Consumption Per Day',
+            text: 'Macronutrients per Capita per Day in the U.S. Food Supply, 1909 - 2010',
             x: -20 //center
         },
         subtitle: {

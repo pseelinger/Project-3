@@ -398,7 +398,7 @@ function barGraph(){
             }
         },
         series: [{
-            name: 'Fruts',
+            name: 'Fruits',
             data: [37.7, 50.8, 50.2, 47.5, 47.2, 46.7, 46.3, 45.9],
             color: '#75A57B',
 

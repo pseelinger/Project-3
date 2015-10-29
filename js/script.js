@@ -1,7 +1,3 @@
-//loadDataTable
-//Parse writeHTMLTable
-//    for htmltable +="" + jdfkjsdf + ""
-//Run dataTables()
 var nutrients = [];
 var grains = 0;
 var veggies = 0;
@@ -341,13 +337,16 @@ function lineGraph(){
         },
         series: [{
             name: 'Fats',
-            data: fats
+            data: fats,
+            color: '#56795A',
         }, {
             name: 'Carbs',
-            data: carbs
+            data: carbs,
+            color: '#1E6388',
         }, {
             name: 'Proteins',
-            data: pros
+            data: pros,
+            color: '#CBDAF2',
         }]
     });
 });
@@ -400,11 +399,13 @@ function barGraph(){
         },
         series: [{
             name: 'Fruts',
-            data: [37.7, 50.8, 50.2, 47.5, 47.2, 46.7, 46.3, 45.9]
+            data: [37.7, 50.8, 50.2, 47.5, 47.2, 46.7, 46.3, 45.9],
+            color: '#75A57B',
 
         }, {
             name: 'Vegetables',
-            data: [22.6, 32.3, 26.8, 28.6, 26.2, 32.5, 25.4, 25.2]
+            data: [22.6, 32.3, 26.8, 28.6, 26.2, 32.5, 25.4, 25.2],
+            color: '#E0E4E5',
 
         }
             ]

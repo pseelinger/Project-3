@@ -34,7 +34,10 @@ li{
     font-family: "Geo Sans Light";
     font-size: 1.3em;
     list-style-type: decimal-leading-zero;
-    width: 150%;
+    background-color: #E0E4E5;
+}
+table{
+    width: 85%;
 }
 #container{
     background-color: #B8D2B4;
@@ -60,15 +63,13 @@ li{
     float: none;
 }
 #selected-foods-wrapper{
-    background-color: #f0f0f0;
     height: 100%;
-    padding: 15px;
-    padding-right: 300px;
     font-family: "Franchise";
-    margin-top: 50px;
+     background-color: #E0E4E5;
 }
 #selected-foods{
     padding-left: 20px;
     padding-right: 20px;
     margin-bottom: 30px;
+    background-color: #E0E4E5;
 }

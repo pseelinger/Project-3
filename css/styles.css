@@ -7,9 +7,9 @@
     src: url("../fonts/Franchise-Bold.ttf")
 }
 body{
-    background-color: #B8D2B4;
+    background-color: #f0f0f0;
 }
-h1, h2{
+h1, h2, h3{
     font-family: "Franchise", Tahomas, sans-serif;
 }
 h1{
@@ -20,36 +20,55 @@ h2{
 }
 h3{
     font-size: 2em;
+    background-color: #75A57B;
+    border-radius: 3px;
+    padding: 10px;
+    margin: 0;
 }
 p{
     float: left;
-    width: 45%;
     font-family: "Geo Sans Light", Helvetica, sans-serif;
     font-size: 1.5em;
 }
 li{
     font-family: "Geo Sans Light";
-    font-size: 1.5em;
+    font-size: 1.3em;
     list-style-type: decimal-leading-zero;
+    width: 150%;
 }
-#hella-wrap{
-    margin-top: 30px;
-    width: 100%;
+#container{
+    background-color: #B8D2B4;
+}
+#intro, #gauges-intro{
+    background-color: #E0E4E5;
+    padding: 5px;
+    font-size: 1.3em;
+}
+#line-graph{
+    clear: both;
+    width: 99%;
+    height: 340px;
+    float: left;
+    margin-bottom: 15px;
+}
+#bar-graph{
+    height: 560px;
+    margin-bottom: 20px;
+    clear: both;
 }
 #gauges-intro{
-    float: left;
-    clear: left;
+    float: none;
 }
 #selected-foods-wrapper{
     background-color: #f0f0f0;
-    width: 45%;
     height: 100%;
-    float: left;
-    padding-left: 15px;
+    padding: 15px;
+    padding-right: 300px;
     font-family: "Franchise";
+    margin-top: 50px;
 }
 #selected-foods{
     padding-left: 20px;
+    padding-right: 20px;
     margin-bottom: 30px;
-    clear: both;
 }

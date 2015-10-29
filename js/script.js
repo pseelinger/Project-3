@@ -18,6 +18,7 @@ var fats = [];
 
 $(document).ready(function() {
     $('#food-data').DataTable( {
+        responsive: true,
         "ajax": 'data.txt'
     } );
 } );
@@ -143,7 +144,7 @@ $(function () {
     $('#grains-gauge').highcharts(Highcharts.merge(gaugeOptions, {
         yAxis: {
             min: 0,
-            max: 11,
+            max: 6,
             title: {
                 text: 'Grains'
             }
@@ -155,7 +156,7 @@ $(function () {
             dataLabels: {
                 format: '<div style="text-align:center"><span style="font-size:25px;color:' +
                     ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black') + '">{y:.1f}</span><br/>' +
-                       '<span style="font-size:12px;color:silver">servings</span></div>'
+                       '<span style="font-size:12px;color:silver">ounces</span></div>'
             },
             tooltip: {
                 valueSuffix: 'servings'
@@ -168,7 +169,7 @@ $(function () {
     $('#veggies-gauge').highcharts(Highcharts.merge(gaugeOptions, {
         yAxis: {
             min: 0,
-            max: 5,
+            max: 3,
             title: {
                 text: 'Vegetables'
             }
@@ -180,7 +181,7 @@ $(function () {
             dataLabels: {
                 format: '<div style="text-align:center"><span style="font-size:25px;color:' +
                     ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black') + '">{y:.1f}</span><br/>' +
-                       '<span style="font-size:12px;color:silver">servings</span></div>'
+                       '<span style="font-size:12px;color:silver">cups</span></div>'
             },
             tooltip: {
                 valueSuffix: 'servings'
@@ -193,7 +194,7 @@ $(function () {
     $('#fruits-gauge').highcharts(Highcharts.merge(gaugeOptions, {
         yAxis: {
             min: 0,
-            max: 4,
+            max: 2,
             title: {
                 text: 'Fruits'
             }
@@ -205,10 +206,10 @@ $(function () {
             dataLabels: {
                 format: '<div style="text-align:center"><span style="font-size:25px;color:' +
                     ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black') + '">{y:.1f}</span><br/>' +
-                       '<span style="font-size:12px;color:silver">servings</span></div>'
+                       '<span style="font-size:12px;color:silver">cups</span></div>'
             },
             tooltip: {
-                valueSuffix: 'servings'
+                valueSuffix: 'cups'
             }
         }]
 
@@ -218,22 +219,22 @@ $(function () {
     $('#milk-gauge').highcharts(Highcharts.merge(gaugeOptions, {
         yAxis: {
             min: 0,
-            max: 5,
+            max: 3,
             title: {
-                text: 'Milk'
+                text: 'Dairy'
             }
         },
 
         series: [{
-            name: 'Milk',
+            name: 'Dairy',
             data: [milk],
             dataLabels: {
                 format: '<div style="text-align:center"><span style="font-size:25px;color:' +
                     ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black') + '">{y:.1f}</span><br/>' +
-                       '<span style="font-size:12px;color:silver">servings</span></div>'
+                       '<span style="font-size:12px;color:silver">cups</span></div>'
             },
             tooltip: {
-                valueSuffix: 'servings'
+                valueSuffix: 'cups'
             }
         }]
 
@@ -243,7 +244,7 @@ $(function () {
     $('#protein-gauge').highcharts(Highcharts.merge(gaugeOptions, {
         yAxis: {
             min: 0,
-            max: 5,
+            max: 6,
             title: {
                 text: 'Protein'
             }
@@ -255,7 +256,7 @@ $(function () {
             dataLabels: {
                 format: '<div style="text-align:center"><span style="font-size:25px;color:' +
                     ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black') + '">{y:.1f}</span><br/>' +
-                       '<span style="font-size:12px;color:silver">servings</span></div>'
+                       '<span style="font-size:12px;color:silver">ounces</span></div>'
             },
             tooltip: {
                 valueSuffix: 'servings'
@@ -354,7 +355,7 @@ function lineGraph(){
 
 function barGraph(){
     $(function () {
-    $('#container').highcharts({
+    $('#bar-graph').highcharts({
         chart: {
             type: 'column'
         },

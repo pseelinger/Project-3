@@ -1,3 +1,4 @@
+// set variables for food groups and an empty array that will store data from the table
 var nutrients = [];
 var grains = 0;
 var veggies = 0;
@@ -5,6 +6,8 @@ var fruits = 0;
 var milk = 0;
 var protein = 0;
 var calories = 0;
+
+//data for gauges requires arrays, so we'll make a couple of those for each food group
 
 var date = [];
 var cals = [];
@@ -22,17 +25,19 @@ loadData();
 barGraph();
 var isClicked = false;
 
+//make it so clicking on a row in the table stores that row's data into an array
+
 $(document).ready(function() {
     var table = $('#food-data').DataTable();
     
        $('#food-data tbody').on('click', 'tr', function(){
       nutrients = table.row( this ).data();
-      console.log(nutrients)
     });
     
     
 });
 
+//check if table has been clicked and then add user's food data values to the gauges if it has been
 function checkClick(){
   if (isClicked) {
     grains = grains + Number(nutrients[2]);
@@ -266,12 +271,9 @@ $(function () {
 gauges();
 $('#food-data tbody').click(function(event){
   event.preventDefault();
-  console.log("Table clicked");
   isClicked = true;
   checkClick();                    
 })
-
-
 
 function loadData(){
     
@@ -412,6 +414,8 @@ function barGraph(){
     });
 });
 }
+
+//adds foods to the "Your Foods" section
 
 function appendFoods(){
     document.getElementById("selected-foods").innerHTML += "<li>" + nutrients[0] + "</li>";
